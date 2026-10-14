@@ -1,0 +1,21 @@
+name: Build Android APK
+
+'on':
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar configuracao
+        run: |
+          echo "Workflow iniciado com sucesso"
+          echo "Arquivos do repositorio:"
+          find . -maxdepth 4 -type f
